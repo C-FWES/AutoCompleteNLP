@@ -54,9 +54,6 @@ public class AutoComplete {
 
 
     public static String[] processContent(String fileContent) {
-
-        //write code
-
         // replace all punctuation with  space Period ?!,;:.
         //remove double quote and single quote and Brackets [](){}<>
         fileContent = fileContent.replaceAll("[?!,;:.]"," .");
@@ -129,7 +126,7 @@ public class AutoComplete {
 
     public static Map<String, Float> buildOneGramFrequency(Map<String, Integer> oneGramCount, int totalWords) {
         Map<String, Float> oneGramFrequency = new HashMap<>();
-        //TODO: calculate one gram frequency
+        // calculate one gram frequency
         for (String key : oneGramCount.keySet()) {
             int count = oneGramCount.get(key);
             oneGramFrequency.put(key, 1.0f * count / totalWords);
@@ -139,7 +136,7 @@ public class AutoComplete {
 
     public static Map<String, Float> buildTwoGramFrequency(Map<String, Integer> twoGramCount, Map<String, Integer> oneGramCount) {
         Map<String, Float> twoGramFrequency = new HashMap<>();
-        //TODO: calculate two gram frequency
+        //calculate two gram frequency
         for (String key : twoGramCount.keySet()) {
             int count = twoGramCount.get(key);
             String oneGram = key.split(" ")[0];
@@ -150,7 +147,7 @@ public class AutoComplete {
 
     public static Map<String, Float> buildThreeGramFrequency(Map<String, Integer> threeGramCount, Map<String, Integer> twoGramCount) {
         Map<String, Float> threeGramFrequency = new HashMap<>();
-        //TODO: calculate three gram frequency
+        // calculate three gram frequency
         for (String key : threeGramCount.keySet()) {
             int count = threeGramCount.get(key);
             String[] words = key.split(" ");
